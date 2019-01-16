@@ -1,0 +1,12 @@
+{
+    "files.associations": {
+        "*.uni": "c",
+        "uefibootservicestablelib.h": "c",
+        "uefishelllevel1commandslib.h": "c",
+        "xstring": "c",
+        "system_error": "c",
+        "uefi.h": "c",
+        "xlocale": "c"
+    },
+    "C_Cpp.errorSquiggles": "Disabled"
+}

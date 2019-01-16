@@ -1,0 +1,21 @@
+[Defines]
+INF_VERSION = 0x00010005
+BASE_NAME = ReadGPT   #The name of efi file.
+FILE_GUID = 0ccd450b-1faa-48a1-9689-fcc054b7be00
+MODULE_TYPE = UEFI_APPLICATION
+VERSION_STRING = 1.0
+ENTRY_POINT = UefiMain
+
+[Sources]
+ReadGPT.c
+
+[Packages]
+MdePkg/MdePkg.dec  #The uefi.h is contained in Mdepkg
+
+[LibraryClasses]
+UefiApplicationEntryPoint  #When MODULE_TYPE is UEFI_APPLICATION, this library is requested.
+UefiLib
+##UefiDriverEntryPoint #When MODULE_TYPE is *_Driver, this library is requested.
+
+[Protocols]
+  gEfiDiskIoProtocolGuid

@@ -1,0 +1,24 @@
+[Defines]
+INF_VERSION = 0x00010005
+BASE_NAME = SystemTable   #The name of efi file.
+FILE_GUID = d065a59e-13c0-4811-ae15-b87bdad5b908
+MODULE_TYPE = UEFI_APPLICATION
+VERSION_STRING = 1.0
+ENTRY_POINT = UefiMain
+
+[Sources]
+SystemTable.c
+
+[Packages]
+MdePkg/MdePkg.dec  #The uefi.h is contained in Mdepkg
+ShellPkg/ShellPkg.dec 
+
+[LibraryClasses]
+UefiApplicationEntryPoint  #When MODULE_TYPE is UEFI_APPLICATION, this library is requested.
+UefiLib
+#UefiBootServicesTableLib
+##UefiDriverEntryPoint #When MODULE_TYPE is *_Driver, this library is requested.
+
+[Protocols]
+  gEfiDiskIoProtocolGuid
+  

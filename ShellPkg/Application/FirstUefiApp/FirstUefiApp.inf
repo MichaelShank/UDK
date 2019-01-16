@@ -1,0 +1,45 @@
+#>>>>>>>>>>>>>>>>>>>>>>>>NO.1<<<<<<<<<<<<<<<<<<<<<
+#[Defines]
+#INF_VERSION = 0x00010005
+#BASE_NAME = FirstUefiApp   #The name of efi file.
+#FILE_GUID = 7872932b-2bd7-4329-9a22-c5e5faff3bc0
+#MODULE_TYPE = UEFI_APPLICATION
+#VERSION_STRING = 1.0
+#ENTRY_POINT = UEFIMain
+
+#[Sources]
+#FirstUefiApp.c
+
+#[Packages]
+#MdePkg/MdePkg.dec  #The uefi.h is contained in Mdepkg
+
+#[LibraryClasses]
+#UefiApplicationEntryPoint  #When MODULE_TYPE is UEFI_APPLICATION, this library is requested.
+#UefiLib
+##UefiDriverEntryPoint #When MODULE_TYPE is *_Driver, this library is requested.
+
+#>>>>>>>>>>>>>>>>>>>>>>>>NO.2<<<<<<<<<<<<<<<<<<<<<
+[Defines]
+INF_VERSION = 0x00010005
+BASE_NAME = FirstUefiApp   #The name of efi file.
+FILE_GUID = 7872932b-2bd7-4329-9a22-c5e5faff3bc0
+MODULE_TYPE = UEFI_APPLICATION
+VERSION_STRING = 1.0
+ENTRY_POINT = ShellCEntryLib
+
+[Sources]
+FirstUefiApp.c
+
+[Packages]
+MdePkg/MdePkg.dec  #The uefi.h is contained in Mdepkg
+ShellPkg/ShellPkg.dec 
+
+[LibraryClasses]
+UefiApplicationEntryPoint  #<- When MODULE_TYPE is UEFI_APPLICATION, this library is requested.
+UefiLib
+##UefiDriverEntryPoint      #<- When MODULE_TYPE is *_Driver, this library is requested.
+ShellCEntryLib              
+UefiBootServicesTableLib
+
+
+

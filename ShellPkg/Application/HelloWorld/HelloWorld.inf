@@ -1,0 +1,18 @@
+[Defines]
+INF_VERSION = 0x00010005
+BASE_NAME = HelloWorld   #The name of efi file.
+FILE_GUID = b4bc1c90-ed08-436c-a882-84e65cb1da0a
+MODULE_TYPE = UEFI_APPLICATION
+VERSION_STRING = 1.0
+ENTRY_POINT = UEFIMain
+
+[Sources]
+HelloWorld.c
+
+[Packages]
+MdePkg/MdePkg.dec  #The uefi.h is contained in Mdepkg
+ShellPkg/ShellPkg.dec
+
+[LibraryClasses]
+UefiApplicationEntryPoint  #When MODULE_TYPE is UEFI_APPLICATION, this library is requested.
+UefiLib
