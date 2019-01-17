@@ -48,6 +48,7 @@ EFI_STATUS EFIAPI UefiMain(IN EFI_HANDLE ImageHandle,
                     TextDevicePath = Device2TextProtocol->ConvertDevicePathToText(DiskDevicePath, TRUE, TRUE);
                     Print(L"%s\n",TextDevicePath);
                     Print(L"%s\n",TextDevicePath);//Git Test
+                    Print(L"%s\n",TextDevicePath);//Git Test2
                     //Print(L"%d\n", Device2TextProtocol->ConvertDevicePathToText);
                     if(TextDevicePath)
                         gBS->FreePool(TextDevicePath);
