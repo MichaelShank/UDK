@@ -47,6 +47,7 @@ EFI_STATUS EFIAPI UefiMain(IN EFI_HANDLE ImageHandle,
                     //2. Use EFI_DEVICE_PATH_PROTOCOL to get device path
                     TextDevicePath = Device2TextProtocol->ConvertDevicePathToText(DiskDevicePath, TRUE, TRUE);
                     Print(L"%s\n",TextDevicePath);
+                    Print(L"%s\n",TextDevicePath);//Git Test
                     //Print(L"%d\n", Device2TextProtocol->ConvertDevicePathToText);
                     if(TextDevicePath)
                         gBS->FreePool(TextDevicePath);
@@ -73,7 +74,7 @@ EFI_STATUS EFIAPI UefiMain(IN EFI_HANDLE ImageHandle,
                     }
                 }
 
-            //// }
+            // }
         
         }
             gBS->FreePool(DiskControllerHandles);   
